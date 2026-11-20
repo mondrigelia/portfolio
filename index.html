@@ -9,14 +9,18 @@
 </head>
 <body>
   <div class="sticky-header">
-  <nav class="section-nav" aria-label="Навигация по портфолио">
-    <a href="#education">Образование</a>
-    <a href="#exchange">Обмен</a>
-    <a href="#courses">Курсы</a>
-    <a href="#publications">Публикации</a>
-    <a href="#achievements">Достижения</a>
-    <a href="#exams">Экзамены</a>
-  </nav>
+    <div class="nav-layout">
+      <button class="nav-control theme-toggle" id="theme-toggle" type="button" aria-label="Включить тёмную тему" title="Переключить тему">◐</button>
+      <nav class="section-nav" aria-label="Навигация по портфолио">
+        <a href="#education">Образование</a>
+        <a href="#exchange">Обмен</a>
+        <a href="#courses">Курсы</a>
+        <a href="#publications">Публикации</a>
+        <a href="#achievements">Достижения</a>
+        <a href="#exams">Экзамены</a>
+      </nav>
+      <button class="nav-control language-toggle" id="language-toggle" type="button" aria-label="Switch to English" title="Switch language">EN</button>
+    </div>
   </div>
 
   <header id="top" class="profile">
@@ -220,5 +224,119 @@
     <p>© Дьяченко Маргарита Ярославовна</p>
     <p><a href="#top">Наверх</a></p>
   </footer>
+
+  <script>
+    (() => {
+      const translations = {
+        "Образование": "Education",
+        "Обмен": "Exchange",
+        "Курсы": "Courses",
+        "Публикации": "Publications",
+        "Достижения": "Achievements",
+        "Экзамены": "Certificates",
+        "Навигация по портфолио": "Portfolio navigation",
+        "Дьяченко Маргарита Ярославовна": "Margarita Diachenko",
+        "23 сентября 2004 года": "23 September 2004",
+        "Москва, Россия": "Moscow, Russia",
+        "Образование": "Education",
+        "Магистр": "Master's degree",
+        "Финансовый университет при Правительстве Российской Федерации": "Financial University under the Government of the Russian Federation",
+        "Факультет международных экономических отношений, Международный бизнес, с частичной реализацией на английском языке": "Faculty of International Economic Relations, International Business (partially taught in English)",
+        "Бакалавр, Диплом с отличием": "Bachelor's degree, with honours",
+        "Факультет информационных технологий и анализа больших данных, Бизнес-информатика, профиль «ИТ-менеджмент в бизнесе»": "Faculty of Information Technology and Big Data Analysis, Business Informatics, specialisation in IT Management in Business",
+        "Средний балл: 4.96 / 5.0": "GPA: 4.96 / 5.0",
+        "Переведена на бюджет на 2 курсе по результатам академической успеваемости (топ 1% факультета)": "Transferred to a state-funded place in the second year based on academic performance (top 1% of the faculty)",
+        "Программы международного обмена": "International Exchange Programmes",
+        "Будапешт, Венгрия": "Budapest, Hungary",
+        "Международная экономика и бизнес, обучение на английском языке": "International Economics and Business; taught in English",
+        "Далянь, Китай": "Dalian, China",
+        "Международные финансы, обучение на английском языке": "International Finance; taught in English",
+        "Повышение квалификации и курсы": "Professional Development and Courses",
+        "Zhongnan University of Economics and Law, Ухань, Китай": "Zhongnan University of Economics and Law, Wuhan, China",
+        "Обучение на английском языке": "Taught in English",
+        "Разработка и применение цифровых финансовых активов": "Development and Application of Digital Financial Assets",
+        "Альфа-Банк & Финансовый университет при Правительстве Российской Федерации": "Alfa-Bank & Financial University under the Government of the Russian Federation",
+        "Искусственный интеллект в управлении": "Artificial Intelligence in Management",
+        "Продуктовое мышление и UX/UI-дизайн": "Product Thinking and UX/UI Design",
+        "Публикации": "Publications",
+        "Проблемы фрагментарной автоматизации бизнес-процессов ИТ-компаний и возможности их решения с использованием BPM-подхода": "Fragmented Automation of IT Company Business Processes: Challenges and BPM-Based Solutions",
+        "Журнал ВАК К2 «Инновации и инвестиции»": "VAK-listed journal, Category K2, “Innovations and Investments”",
+        "Data-driven оценка факторов текущего счёта в нефтегазовых экономиках: регрессионный анализ на примере России и стран ОПЕК": "A Data-Driven Assessment of Current Account Determinants in Oil and Gas Economies: Regression Analysis of Russia and OPEC Countries",
+        "XXXIV Международная конференция «Современные информационные технологии в образовании, науке и промышленности»": "34th International Conference “Modern Information Technologies in Education, Science and Industry”",
+        "Диплом победителя I степени": "First Prize Diploma",
+        "Перспективы интернета вещей в банкинге: возможности использования, преимущества, риски": "The Prospects of the Internet of Things in Banking: Applications, Benefits and Risks",
+        "Диплом победителя I степени": "First Prize Diploma",
+        "Управленческие тренды в условиях промышленной революции 5.0": "Management Trends in the Era of the Fifth Industrial Revolution",
+        "Международная научно-практическая конференция «Актуальные проблемы научного и технологического обеспечения инновационного развития»": "International Research and Practice Conference “Current Issues in Scientific and Technological Support for Innovative Development”",
+        "Научные и проектные достижения": "Research and Project Achievements",
+        "VI Весенняя школа «Информационные технологии и искусственный интеллект» МАИ и Финансового университета, кейс от ИТ-холдинга Т1": "6th Spring School on Information Technology and Artificial Intelligence, Moscow Aviation Institute and Financial University; case study by T1 IT Holding",
+        "Диплом призёра II степени": "Second Prize",
+        "Проект:": "Project:",
+        "Маркетплейс облачных находок «Cloudberries»": "Cloudberries Marketplace",
+        "Международная научно-практическая конференция молодых учёных и специалистов по устойчивому развитию, инвестициям и финансовым рискам «Финатлон форум»": "Finatlon Forum: International Research and Practice Conference for Young Researchers and Specialists in Sustainable Development, Investment and Financial Risks",
+        "Лауреат III степени": "Third Degree Laureate",
+        "«Интеллектуализация бизнес-процесса управления услугами внедрения программных средств»": "“Intelligent Automation of the Business Process for Managing Software Implementation Services”",
+        "VII Всероссийская научно-практическая конференция по бизнес-информатике «Научные школы бизнес-информатики: инженерия управления будущего»": "7th All-Russian Research and Practice Conference on Business Informatics: “Business Informatics Research Schools: Engineering the Management of the Future”",
+        "«Data-driven оценка факторов текущего счёта в нефтегазовых экономиках: регрессионный анализ на примере России и стран ОПЕК»": "“A Data-Driven Assessment of Current Account Determinants in Oil and Gas Economies: Regression Analysis of Russia and OPEC Countries”",
+        "Научно-исследовательская работа в рамках временного творческого студенческого коллектива по направлению, предложенному Министерством науки и высшего образования Российской Федерации": "Research conducted as part of a temporary student research team on a topic proposed by the Ministry of Science and Higher Education of the Russian Federation",
+        "«Использование анализа больших данных для определения факторов эффективности результата государственных закупок на примере закупочной деятельности Министерства науки и высшего образования»": "“Using Big Data Analysis to Identify Factors Affecting Public Procurement Performance: A Case Study of the Ministry of Science and Higher Education”",
+        "Хакатон GlowByte Autumn Hack": "GlowByte Autumn Hack Hackathon",
+        "Диплом участника": "Participant Diploma",
+        "Разработка и тестирование SQL-сценария выявления операций обязательного контроля (код 3011) в рамках автоматизации банковского комплаенса.": "Development and testing of an SQL scenario to identify transactions subject to mandatory control (code 3011) as part of banking compliance automation.",
+        "IV Международная научно-практическая конференция «Операционный и проектный менеджмент: стратегии и тенденции»": "4th International Research and Practice Conference “Operations and Project Management: Strategies and Trends”",
+        "Лауреат III степени": "Third Degree Laureate",
+        "«Бирюзовые организации: вызовы для менеджмента»": "“Teal Organisations: Management Challenges”",
+        "III Всероссийская студенческая конференция «Ресурсная экономика: модели возможного развития»": "3rd All-Russian Student Conference “Resource Economics: Models for Possible Development”",
+        "Лауреат II степени": "Second Degree Laureate",
+        "«Цифровизация как тренд развития торговли в современной экономике»": "“Digitalisation as a Trend in the Development of Trade in the Modern Economy”",
+        "Всероссийская олимпиада «Я — предприниматель»": "All-Russian “I Am an Entrepreneur” Olympiad",
+        "Призёр в 2022/2023 учебном году": "Prize-winner, 2022/2023 academic year",
+        "Проект: Telegram-бот SleepAI на базе искусственного интеллекта для улучшения сна пользователя": "Project: SleepAI AI-powered Telegram bot designed to improve users’ sleep",
+        "Тесты и экзамены": "Tests and Certifications",
+        "Сертификационный экзамен AXELOT WMS X5 уровня «Старт»": "AXELOT WMS X5 Certification Exam, “Start” Level",
+        "ООО «Акселот-Л»": "Axelot-L LLC",
+        "Наверх": "Back to top"
+      };
+      const reverse = Object.fromEntries(Object.entries(translations).map(([ru, en]) => [en, ru]));
+      const themeButton = document.getElementById("theme-toggle");
+      const languageButton = document.getElementById("language-toggle");
+      const root = document.documentElement;
+      const setTheme = (theme) => {
+        root.dataset.theme = theme;
+        try { localStorage.setItem("portfolio-theme", theme); } catch (_) {}
+        themeButton.textContent = theme === "dark" ? "☀" : "◐";
+        themeButton.setAttribute("aria-label", theme === "dark" ? "Включить светлую тему" : "Включить тёмную тему");
+        themeButton.title = theme === "dark" ? "Switch to light theme" : "Switch to dark theme";
+      };
+      const setLanguage = (lang) => {
+        const map = lang === "en" ? translations : reverse;
+        const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+        let node;
+        while ((node = walker.nextNode())) {
+          const current = node.nodeValue;
+          const trimmed = current.trim();
+          if (!trimmed || !map[trimmed]) continue;
+          const leading = current.match(/^\s*/)[0];
+          const trailing = current.match(/\s*$/)[0];
+          node.nodeValue = leading + map[trimmed] + trailing;
+        }
+        root.lang = lang;
+        document.querySelector(".section-nav").setAttribute("aria-label", lang === "en" ? "Portfolio navigation" : "Навигация по портфолио");
+        languageButton.textContent = lang === "en" ? "RU" : "EN";
+        languageButton.setAttribute("aria-label", lang === "en" ? "Переключить на русский" : "Switch to English");
+        document.title = lang === "en" ? "Margarita Diachenko — Portfolio" : "Дьяченко Маргарита Ярославовна — портфолио";
+        try { localStorage.setItem("portfolio-language", lang); } catch (_) {}
+      };
+      themeButton.addEventListener("click", () => setTheme(root.dataset.theme === "dark" ? "light" : "dark"));
+      languageButton.addEventListener("click", () => setLanguage(root.lang === "en" ? "ru" : "en"));
+      let savedTheme = "light", savedLanguage = "ru";
+      try {
+        savedTheme = localStorage.getItem("portfolio-theme") || "light";
+        savedLanguage = localStorage.getItem("portfolio-language") || "ru";
+      } catch (_) {}
+      setTheme(savedTheme);
+      if (savedLanguage === "en") setLanguage("en");
+    })();
+  </script>
 </body>
 </html>
