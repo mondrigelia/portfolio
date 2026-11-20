@@ -2,21 +2,21 @@
   color-scheme: light;
   --ink: #171717;
   --muted: #666;
-  --line: #eadde3;
-  --soft: #fbf5f8;
+  --line: #dce9e2;
+  --soft: #f4faf6;
   --paper: #fff;
-  --accent: #b85d83;
-  --edge: #f8eaf0;
+  --accent: #287a62;
+  --edge: #e8f3ed;
 }
 :root[data-theme="dark"] {
   color-scheme: dark;
   --ink: #ededed;
   --muted: #a5a5a5;
-  --line: #44343c;
-  --soft: #2b2227;
+  --line: #35483e;
+  --soft: #202c26;
   --paper: #171717;
-  --accent: #e49abb;
-  --edge: #35232c;
+  --accent: #72b99b;
+  --edge: #20372e;
   background: linear-gradient(90deg, var(--edge) 0%, var(--paper) 19%, var(--paper) 81%, var(--edge) 100%);
 }
 * { box-sizing: border-box; }
@@ -24,7 +24,7 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: 72px;
   min-height: 100%;
-  background: linear-gradient(90deg, var(--edge) 0%, #fff 19%, #fff 81%, var(--edge) 100%);
+  background: linear-gradient(90deg, var(--edge) 0%, var(--paper) 19%, var(--paper) 81%, var(--edge) 100%);
 }
 body {
   margin: 0 auto; padding: 0 40px 32px; max-width: 1120px;
