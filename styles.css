@@ -5,6 +5,8 @@
   --line: #d8d8d8;
   --soft: #f4f4f4;
   --paper: #fff;
+  --accent: #c65383;
+  --edge: #f3dce6;
 }
 :root[data-theme="dark"] {
   color-scheme: dark;
@@ -13,9 +15,19 @@
   --line: #3b3b3b;
   --soft: #252525;
   --paper: #171717;
+  --accent: #e49abb;
+  --edge: #35232c;
 }
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 72px;
+  min-height: 100%;
+  background: linear-gradient(90deg, var(--edge) 0%, #fff 19%, #fff 81%, var(--edge) 100%);
+}
+:root[data-theme="dark"] html {
+  background: linear-gradient(90deg, var(--edge) 0%, var(--paper) 19%, var(--paper) 81%, var(--edge) 100%);
+}
 body {
   margin: 0 auto; padding: 0 40px 32px; max-width: 1120px;
   background: var(--paper); color: var(--ink);
@@ -78,7 +90,14 @@ section {
   row-gap: 22px; padding: 38px 0 34px;
   border-bottom: 1px solid var(--line);
 }
-section h2 { margin: 0 0 2px; font-size: 22px; line-height: 1.25; font-weight: 600; letter-spacing: -.025em; }
+section h2 {
+  margin: 0 0 2px;
+  color: var(--accent);
+  font-size: 22px;
+  line-height: 1.25;
+  font-weight: 600;
+  letter-spacing: -.025em;
+}
 .record {
   display: grid; grid-template-columns: minmax(105px, 145px) minmax(0, 1fr);
   column-gap: 24px; padding: 0 0 25px; margin: 0 0 25px;
