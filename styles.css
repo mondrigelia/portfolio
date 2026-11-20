@@ -24,11 +24,11 @@ a:focus-visible { outline: 2px solid var(--ink); outline-offset: 4px; }
   border-bottom: 1px solid var(--line);
 }
 .profile {
-  display: grid; grid-template-columns: 190px minmax(0, 1fr);
-  gap: 30px; align-items: center;
+  display: grid; grid-template-columns: 210px minmax(0, 1fr);
+  gap: 26px; align-items: center;
   padding: 38px 0 46px; border-bottom: 1px solid var(--ink);
 }
-.photo-placeholder { width: 100%; max-width: 190px; aspect-ratio: 4 / 5; background: var(--soft); border: 1px solid var(--line); }
+.photo-placeholder { width: 100%; max-width: 210px; aspect-ratio: 4 / 5; background: var(--soft); border: 1px solid var(--line); }
 .profile-photo { display: block; width: 100%; max-width: 190px; aspect-ratio: 4 / 5; object-fit: cover; object-position: center; }
 .profile-information h1 {
   max-width: 650px; margin: 0 0 8px; font-size: clamp(24px, 3vw, 36px);
@@ -105,8 +105,8 @@ footer a { color: inherit; }
 @media (max-width: 720px) {
   body { padding: 0 22px 24px; }
   .sticky-header { margin: 0 -22px; padding: 0 22px; }
-  .profile { grid-template-columns: 116px minmax(0, 1fr); gap: 16px; padding: 28px 0 34px; }
-  .photo-placeholder { max-width: 116px; }
+  .profile { grid-template-columns: 128px minmax(0, 1fr); gap: 16px; padding: 28px 0 34px; }
+  .photo-placeholder { max-width: 128px; }
   .profile-photo { max-width: 116px; }
   .profile-information h1 { font-size: clamp(21px, 4vw, 30px); }
   .profile-information > p { margin-bottom: 8px; }
@@ -116,8 +116,8 @@ footer a { color: inherit; }
 @media (max-width: 480px) {
   body { padding: 0 17px 22px; font-size: 14px; }
   .sticky-header { margin: 0 -17px; padding: 0 17px; }
-  .profile { grid-template-columns: 92px minmax(0, 1fr); gap: 12px; padding: 22px 0 28px; }
-  .photo-placeholder { width: 92px; max-width: 92px; aspect-ratio: 4 / 5; }
+  .profile { grid-template-columns: 100px minmax(0, 1fr); gap: 12px; padding: 22px 0 28px; }
+  .photo-placeholder { width: 100px; max-width: 100px; aspect-ratio: 4 / 5; }
   .profile-photo { width: 92px; max-width: 92px; }
   .profile-information h1 { font-size: 20px; }
   .section-nav { gap: 8px 14px; padding: 10px 0 12px; }
