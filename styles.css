@@ -60,6 +60,16 @@ section h2 { margin: 0 0 2px; font-size: 22px; line-height: 1.25; font-weight: 6
   column-gap: 24px; padding: 0 0 25px; margin: 0 0 25px;
   border-bottom: 1px solid #e8e8e8;
 }
+.education-record { grid-template-columns: minmax(105px, 145px) minmax(0, 1fr); }
+.education-side { grid-column: 1; grid-row: 1; }
+.education-side .period { margin: 2px 0 7px; color: var(--muted); font-size: 13px; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.education-side h3 { margin: 0; font-size: 16px; line-height: 1.4; font-weight: 600; }
+.education-details { grid-column: 2; grid-row: 1; min-width: 0; }
+.education-details h3 { margin: 0 0 7px; font-size: 17px; line-height: 1.4; font-weight: 600; letter-spacing: -.015em; }
+.education-details p, .education-details ul { margin: 0 0 7px; }
+.education-details ul { padding-left: 19px; }
+.education-details li { padding-left: 3px; margin: 2px 0; }
+.education-details > :last-child { margin-bottom: 0; }
 .record:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: 0; }
 .record > .period {
   grid-column: 1; grid-row: 1 / span 5; margin: 2px 0 0;
@@ -108,6 +118,11 @@ footer a { color: inherit; }
   .profile-information > p { font-size: 12px; }
   .record { grid-template-columns: 1fr; row-gap: 4px; }
   .record > .period { grid-column: 1; grid-row: auto; margin-bottom: 3px; }
+  .education-side, .education-details { grid-column: 1; grid-row: auto; }
+  .education-side { display: flex; align-items: baseline; gap: 12px; }
+  .education-side .period { margin: 0; }
+  .education-side h3 { font-size: 14px; }
+  .education-details h3 { font-size: 16px; }
   .record h3, .record p, .record ul { grid-column: 1; }
   #publications .record h3 { font-size: 15px; }
   footer { flex-direction: column; gap: 8px; }
