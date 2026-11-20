@@ -153,7 +153,7 @@ footer a { color: inherit; }
   .education-side, .education-details { grid-column: 1; grid-row: auto; }
   .education-side { display: flex; align-items: baseline; gap: 12px; }
   .education-side .period { margin: 0; }
-  .education-side h3 { font-size: 14px; }
+  .education-side h3 { font-size: 13px; font-weight: 400; }
   .education-details h3 { font-size: 16px; }
   .record h3, .record p, .record ul { grid-column: 1; }
   #publications .record h3, #achievements .record h3 { font-size: 15px; }
