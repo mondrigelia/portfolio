@@ -104,6 +104,7 @@ section h2 { margin: 0 0 2px; font-size: 22px; line-height: 1.25; font-weight: 6
   font-weight: 600; letter-spacing: -.015em;
 }
 .record p, .record ul { grid-column: 2; margin: 0 0 7px; }
+.course-language { color: var(--muted); font-size: 13px; font-weight: 400; }
 .record ul { padding-left: 19px; }
 .record li { padding-left: 3px; margin: 2px 0; }
 .record p:last-child, .record ul:last-child { margin-bottom: 0; }
