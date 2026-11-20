@@ -2,18 +2,18 @@
   color-scheme: light;
   --ink: #171717;
   --muted: #666;
-  --line: #d8d8d8;
-  --soft: #f4f4f4;
+  --line: #eadde3;
+  --soft: #fbf5f8;
   --paper: #fff;
-  --accent: #c65383;
-  --edge: #f3dce6;
+  --accent: #b85d83;
+  --edge: #f8eaf0;
 }
 :root[data-theme="dark"] {
   color-scheme: dark;
   --ink: #ededed;
   --muted: #a5a5a5;
-  --line: #3b3b3b;
-  --soft: #252525;
+  --line: #44343c;
+  --soft: #2b2227;
   --paper: #171717;
   --accent: #e49abb;
   --edge: #35232c;
@@ -34,7 +34,7 @@ body {
 }
 a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; }
 a:hover { text-decoration-thickness: 2px; }
-a:focus-visible { outline: 2px solid var(--ink); outline-offset: 4px; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 .sticky-header {
   position: sticky; top: 0; z-index: 20;
   margin: 0 -40px; padding: 0 40px;
@@ -44,7 +44,7 @@ a:focus-visible { outline: 2px solid var(--ink); outline-offset: 4px; }
 .profile {
   display: grid; grid-template-columns: 230px minmax(0, 1fr);
   gap: 24px; align-items: center;
-  padding: 38px 0 46px; border-bottom: 1px solid var(--ink);
+  padding: 38px 0 46px; border-bottom: 1px solid var(--line);
 }
 .photo-placeholder { width: 100%; max-width: 230px; aspect-ratio: 4 / 5; background: var(--soft); border: 1px solid var(--line); }
 .profile-photo { display: block; width: 100%; max-width: 190px; aspect-ratio: 4 / 5; object-fit: cover; object-position: center; }
@@ -59,7 +59,7 @@ a:focus-visible { outline: 2px solid var(--ink); outline-offset: 4px; }
 address { display: flex; flex-direction: column; align-items: flex-start; gap: 5px; font-style: normal; }
 address p { margin: 0; }
 address a { display: inline-flex; align-items: center; gap: 9px; text-decoration: none; }
-address a:hover { text-decoration: underline; }
+address a:hover { color: var(--accent); text-decoration: underline; }
 .contact-icon { width: 15px; height: 15px; flex: 0 0 15px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
 .telegram-icon { fill: none; stroke-width: 1.6; }
 .nav-layout {
@@ -73,15 +73,15 @@ address a:hover { text-decoration: underline; }
   background: transparent; color: var(--ink); cursor: pointer;
   font: inherit; font-size: 13px; line-height: 1;
 }
-.nav-control:hover { background: var(--soft); }
-.nav-control:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+.nav-control:hover { background: var(--soft); border-color: var(--accent); color: var(--accent); }
+.nav-control:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 .language-toggle { font-size: 11px; font-weight: 600; }
 .section-nav {
   display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 28px; padding: 14px 0 15px;
   border-top: 0;
 }
 .section-nav a { color: var(--muted); font-size: 13px; text-decoration: none; }
-.section-nav a:hover { color: var(--ink); text-decoration: underline; }
+.section-nav a:hover { color: var(--accent); text-decoration: underline; text-underline-offset: 4px; }
 main { padding-top: 12px; }
 section {
   display: grid; grid-template-columns: minmax(0, 1fr);
@@ -132,7 +132,7 @@ section h2 {
 #publications .record { padding-bottom: 14px; margin-bottom: 14px; }
 #publications .record h3 { font-size: 16px; margin-bottom: 0; }
 #publications .record h3 a { text-decoration: underline; }
-#publications .record h3 a:hover { text-decoration-thickness: 2px; }
+#publications .record h3 a:hover { color: var(--accent); text-decoration-thickness: 2px; }
 #publications .publication-meta,
 #publications .publication-award { color: var(--muted); font-size: 13px; line-height: 1.5; }
 #publications .publication-award { color: var(--ink); font-weight: 500; }
