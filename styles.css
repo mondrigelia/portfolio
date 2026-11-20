@@ -71,6 +71,11 @@ section h2 { margin: 0 0 2px; font-size: 22px; line-height: 1.25; font-weight: 6
 .record p:last-child, .record ul:last-child { margin-bottom: 0; }
 #publications .record { padding-bottom: 14px; margin-bottom: 14px; }
 #publications .record h3 { font-size: 16px; margin-bottom: 0; }
+#publications .record h3 a { text-decoration: none; }
+#publications .record h3 a:hover { text-decoration: underline; }
+#publications .publication-meta,
+#publications .publication-award { color: var(--muted); font-size: 13px; line-height: 1.5; }
+#publications .publication-award { color: var(--ink); font-weight: 500; }
 footer {
   display: flex; justify-content: space-between; gap: 20px; padding: 24px 0 0;
   color: var(--muted); font-size: 12px;
