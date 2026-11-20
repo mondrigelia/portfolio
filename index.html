@@ -306,7 +306,9 @@
         try { localStorage.setItem("portfolio-theme", theme); } catch (_) {}
         themeButton.textContent = theme === "dark" ? "☀" : "◐";
         themeButton.setAttribute("aria-label", theme === "dark" ? "Включить светлую тему" : "Включить тёмную тему");
-        themeButton.title = theme === "dark" ? "Switch to light theme" : "Switch to dark theme";
+        themeButton.title = root.lang === "en"
+          ? (theme === "dark" ? "Switch to light theme" : "Switch to dark theme")
+          : (theme === "dark" ? "Включить светлую тему" : "Включить тёмную тему");
       };
       const setLanguage = (lang) => {
         const map = lang === "en" ? translations : reverse;
@@ -324,6 +326,13 @@
         document.querySelector(".section-nav").setAttribute("aria-label", lang === "en" ? "Portfolio navigation" : "Навигация по портфолио");
         languageButton.textContent = lang === "en" ? "RU" : "EN";
         languageButton.setAttribute("aria-label", lang === "en" ? "Переключить на русский" : "Switch to English");
+        themeButton.setAttribute("aria-label", lang === "en"
+          ? (root.dataset.theme === "dark" ? "Switch to light theme" : "Switch to dark theme")
+          : (root.dataset.theme === "dark" ? "Включить светлую тему" : "Включить тёмную тему"));
+        themeButton.title = lang === "en"
+          ? (root.dataset.theme === "dark" ? "Switch to light theme" : "Switch to dark theme")
+          : (root.dataset.theme === "dark" ? "Включить светлую тему" : "Включить тёмную тему");
+        document.querySelector(".profile-photo").alt = lang === "en" ? "Portrait of Margarita Diachenko" : "Фотография Дьяченко Маргариты Ярославовны";
         document.title = lang === "en" ? "Margarita Diachenko — Portfolio" : "Дьяченко Маргарита Ярославовна — портфолио";
         try { localStorage.setItem("portfolio-language", lang); } catch (_) {}
       };
