@@ -1,16 +1,96 @@
-/* Структурная версия портфолио. Визуальное оформление будет добавлено отдельно. */
-* { box-sizing: border-box; }
-body { margin: 24px auto; padding: 0 20px; max-width: 1000px; font-family: Arial, sans-serif; line-height: 1.5; }
-.profile { display: grid; grid-template-columns: 220px 1fr; gap: 32px; align-items: start; margin-bottom: 48px; }
-.photo-placeholder { min-height: 260px; }
-.profile-information h1 { margin-top: 0; }
-address { font-style: normal; }
-section { margin: 0 0 44px; }
-.record { margin: 0 0 28px; }
-.period { margin-bottom: 6px; }
-.proof-slot { margin-top: 12px; }
-footer { margin-top: 48px; }
-@media (max-width: 600px) {
-  .profile { grid-template-columns: 1fr; gap: 12px; }
-  .photo-placeholder { min-height: 180px; }
+:root {
+  color-scheme: light;
+  --ink: #171717;
+  --muted: #666;
+  --line: #d8d8d8;
+  --soft: #f4f4f4;
+  --paper: #fff;
 }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 24px; }
+body {
+  margin: 0 auto; padding: 56px 40px 32px; max-width: 1120px;
+  background: var(--paper); color: var(--ink);
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  font-size: 15px; line-height: 1.65; -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:hover { text-decoration-thickness: 2px; }
+a:focus-visible { outline: 2px solid var(--ink); outline-offset: 4px; }
+.profile {
+  display: grid; grid-template-columns: minmax(210px, 280px) minmax(0, 1fr);
+  gap: clamp(32px, 6vw, 76px); align-items: center;
+  padding: 0 0 54px; border-bottom: 1px solid var(--ink);
+}
+.photo-placeholder { width: 100%; aspect-ratio: 4 / 5; background: var(--soft); border: 1px solid var(--line); }
+.profile-information h1 {
+  max-width: 650px; margin: 0 0 18px; font-size: clamp(30px, 4vw, 48px);
+  font-weight: 600; line-height: 1.12; letter-spacing: -.045em;
+}
+.profile-information > p { margin: 0 0 24px; color: var(--muted); }
+address { display: grid; gap: 5px; font-style: normal; }
+address p { margin: 0; }
+address a { text-decoration: none; }
+address a:hover { text-decoration: underline; }
+.section-nav {
+  display: flex; flex-wrap: wrap; gap: 10px 28px; padding: 17px 0 20px;
+  border-bottom: 1px solid var(--line);
+}
+.section-nav a { color: var(--muted); font-size: 13px; text-decoration: none; }
+.section-nav a:hover { color: var(--ink); text-decoration: underline; }
+main { padding-top: 12px; }
+section {
+  display: grid; grid-template-columns: minmax(180px, 250px) minmax(0, 1fr);
+  column-gap: clamp(28px, 5vw, 64px); padding: 42px 0 38px;
+  border-bottom: 1px solid var(--line);
+}
+section h2 { margin: 0; font-size: 22px; line-height: 1.25; font-weight: 600; letter-spacing: -.025em; }
+.record {
+  display: grid; grid-template-columns: minmax(105px, 145px) minmax(0, 1fr);
+  column-gap: 24px; padding: 0 0 25px; margin: 0 0 25px;
+  border-bottom: 1px solid #e8e8e8;
+}
+.record:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: 0; }
+.record > .period {
+  grid-column: 1; grid-row: 1 / span 5; margin: 2px 0 0;
+  color: var(--muted); font-size: 13px; font-variant-numeric: tabular-nums; white-space: nowrap;
+}
+.record h3 {
+  grid-column: 2; margin: 0 0 7px; font-size: 17px; line-height: 1.4;
+  font-weight: 600; letter-spacing: -.015em;
+}
+.record p, .record ul { grid-column: 2; margin: 0 0 7px; }
+.record ul { padding-left: 19px; }
+.record li { padding-left: 3px; margin: 2px 0; }
+.record p:last-child, .record ul:last-child { margin-bottom: 0; }
+#publications .record h3 { font-size: 16px; }
+#publications .record p { color: #414141; font-size: 13px; line-height: 1.6; }
+#publications .record p a { color: var(--ink); }
+#publications .record p:nth-of-type(2) { overflow-wrap: anywhere; }
+footer {
+  display: flex; justify-content: space-between; gap: 20px; padding: 24px 0 0;
+  color: var(--muted); font-size: 12px;
+}
+footer p { margin: 0; }
+footer a { color: inherit; }
+@media (max-width: 720px) {
+  body { padding: 28px 22px 24px; }
+  .profile { grid-template-columns: minmax(110px, 34%) minmax(0, 1fr); gap: 22px; padding-bottom: 34px; }
+  .profile-information h1 { font-size: clamp(23px, 5vw, 34px); }
+  .profile-information > p { margin-bottom: 16px; }
+  section { grid-template-columns: 1fr; row-gap: 22px; padding: 30px 0; }
+  section h2 { font-size: 20px; }
+}
+@media (max-width: 480px) {
+  body { padding: 22px 17px; font-size: 14px; }
+  .profile { grid-template-columns: 1fr; gap: 18px; }
+  .photo-placeholder { width: min(46%, 160px); aspect-ratio: 4 / 5; }
+  .profile-information h1 { font-size: 30px; }
+  .section-nav { gap: 9px 17px; }
+  .record { grid-template-columns: 1fr; row-gap: 4px; }
+  .record > .period { grid-column: 1; grid-row: auto; margin-bottom: 3px; }
+  .record h3, .record p, .record ul { grid-column: 1; }
+  #publications .record h3 { font-size: 15px; }
+  footer { flex-direction: column; gap: 8px; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
