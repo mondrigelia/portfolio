@@ -65,7 +65,7 @@ section h2 { margin: 0 0 2px; font-size: 22px; line-height: 1.25; font-weight: 6
 .education-record { grid-template-columns: minmax(105px, 145px) minmax(0, 1fr); }
 .education-side { grid-column: 1; grid-row: 1; }
 .education-side .period { margin: 2px 0 7px; color: var(--muted); font-size: 13px; font-variant-numeric: tabular-nums; white-space: nowrap; }
-.education-side h3 { margin: 0; font-size: 16px; line-height: 1.4; font-weight: 600; }
+.education-side h3 { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.4; font-weight: 500; }
 .education-details { grid-column: 2; grid-row: 1; min-width: 0; }
 .education-details h3 { margin: 0 0 7px; font-size: 17px; line-height: 1.4; font-weight: 600; letter-spacing: -.015em; }
 .education-details p, .education-details ul { margin: 0 0 7px; }
