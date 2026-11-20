@@ -10,7 +10,7 @@
 <body>
   <div class="sticky-header">
     <div class="nav-layout">
-      <button class="nav-control theme-toggle" id="theme-toggle" type="button" aria-label="Включить тёмную тему" title="Переключить тему">◐</button>
+      <button class="nav-control theme-toggle" id="theme-toggle" type="button" aria-label="Включить тёмную тему" title="Переключить тему">☾</button>
       <nav class="section-nav" aria-label="Навигация по портфолио">
         <a href="#education">Образование</a>
         <a href="#exchange">Обмен</a>
@@ -304,7 +304,7 @@
       const setTheme = (theme) => {
         root.dataset.theme = theme;
         try { localStorage.setItem("portfolio-theme", theme); } catch (_) {}
-        themeButton.textContent = theme === "dark" ? "☀" : "◐";
+        themeButton.textContent = theme === "dark" ? "☀" : "☾";
         themeButton.setAttribute("aria-label", theme === "dark" ? "Включить светлую тему" : "Включить тёмную тему");
         themeButton.title = root.lang === "en"
           ? (theme === "dark" ? "Switch to light theme" : "Switch to dark theme")
