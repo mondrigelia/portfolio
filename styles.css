@@ -6,7 +6,9 @@
   --soft: #f4faf6;
   --paper: #fff;
   --accent: #287a62;
+  --accent-secondary: #78384f;
   --edge: #e8f3ed;
+  --edge-burgundy: #f4e9ed;
 }
 :root[data-theme="dark"] {
   color-scheme: dark;
@@ -16,15 +18,17 @@
   --soft: #202c26;
   --paper: #171717;
   --accent: #72b99b;
+  --accent-secondary: #c58a9e;
   --edge: #20372e;
-  background: linear-gradient(90deg, var(--edge) 0%, var(--paper) 19%, var(--paper) 81%, var(--edge) 100%);
+  --edge-burgundy: #38262e;
+  background: linear-gradient(90deg, var(--edge) 0%, var(--paper) 19%, var(--paper) 81%, var(--edge-burgundy) 100%);
 }
 * { box-sizing: border-box; }
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 72px;
   min-height: 100%;
-  background: linear-gradient(90deg, var(--edge) 0%, var(--paper) 19%, var(--paper) 81%, var(--edge) 100%);
+  background: linear-gradient(90deg, var(--edge) 0%, var(--paper) 19%, var(--paper) 81%, var(--edge-burgundy) 100%);
 }
 body {
   margin: 0 auto; padding: 0 40px 32px; max-width: 1120px;
@@ -33,8 +37,8 @@ body {
   font-size: 15px; line-height: 1.65; -webkit-font-smoothing: antialiased;
 }
 a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; }
-a:hover { color: var(--accent); text-decoration-thickness: 2px; }
-a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+a:hover { color: var(--accent-secondary); text-decoration-thickness: 2px; }
+a:focus-visible { outline: 2px solid var(--accent-secondary); outline-offset: 4px; }
 .sticky-header {
   position: sticky; top: 0; z-index: 20;
   margin: 0 -40px; padding: 0 40px;
@@ -90,7 +94,7 @@ section {
 }
 section h2 {
   margin: 0 0 2px;
-  color: var(--accent);
+  color: var(--accent-secondary);
   font-size: 22px;
   line-height: 1.25;
   font-weight: 600;
@@ -132,7 +136,7 @@ section h2 {
 #publications .record { padding-bottom: 14px; margin-bottom: 14px; }
 #publications .record h3 { font-size: 16px; margin-bottom: 0; }
 #publications .record h3 a { text-decoration: underline; }
-#publications .record h3 a:hover { color: var(--accent); text-decoration-thickness: 2px; }
+#publications .record h3 a:hover { color: var(--accent-secondary); text-decoration-thickness: 2px; }
 #publications .publication-meta,
 #publications .publication-award { color: var(--muted); font-size: 13px; line-height: 1.5; }
 #publications .publication-award { color: var(--ink); font-weight: 500; }
