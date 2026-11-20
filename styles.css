@@ -92,6 +92,10 @@ section h2 { margin: 0 0 2px; font-size: 22px; line-height: 1.25; font-weight: 6
 #publications .publication-meta,
 #publications .publication-award { color: var(--muted); font-size: 13px; line-height: 1.5; }
 #publications .publication-award { color: var(--ink); font-weight: 500; }
+#achievements .record { padding-bottom: 16px; margin-bottom: 16px; }
+#achievements .record h3 { font-size: 16px; margin-bottom: 3px; }
+#achievements .achievement-award { font-weight: 600; margin-bottom: 3px; }
+#achievements .achievement-title { font-style: italic; color: var(--muted); font-size: 14px; line-height: 1.5; }
 footer {
   display: flex; justify-content: space-between; gap: 20px; padding: 24px 0 0;
   color: var(--muted); font-size: 12px;
@@ -128,7 +132,8 @@ footer a { color: inherit; }
   .education-side h3 { font-size: 14px; }
   .education-details h3 { font-size: 16px; }
   .record h3, .record p, .record ul { grid-column: 1; }
-  #publications .record h3 { font-size: 15px; }
+  #publications .record h3, #achievements .record h3 { font-size: 15px; }
+  #achievements .achievement-title { font-size: 13px; }
   footer { flex-direction: column; gap: 8px; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
