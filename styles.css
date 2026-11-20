@@ -17,6 +17,7 @@
   --paper: #171717;
   --accent: #e49abb;
   --edge: #35232c;
+  background: linear-gradient(90deg, var(--edge) 0%, var(--paper) 19%, var(--paper) 81%, var(--edge) 100%);
 }
 * { box-sizing: border-box; }
 html {
@@ -24,9 +25,6 @@ html {
   scroll-padding-top: 72px;
   min-height: 100%;
   background: linear-gradient(90deg, var(--edge) 0%, #fff 19%, #fff 81%, var(--edge) 100%);
-}
-:root[data-theme="dark"] html {
-  background: linear-gradient(90deg, var(--edge) 0%, var(--paper) 19%, var(--paper) 81%, var(--edge) 100%);
 }
 body {
   margin: 0 auto; padding: 0 40px 32px; max-width: 1120px;
