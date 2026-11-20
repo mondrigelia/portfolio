@@ -7,7 +7,7 @@
   --paper: #fff;
 }
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; scroll-padding-top: 190px; }
+html { scroll-behavior: smooth; scroll-padding-top: 72px; }
 body {
   margin: 0 auto; padding: 0 40px 32px; max-width: 1120px;
   background: var(--paper); color: var(--ink);
@@ -19,14 +19,14 @@ a:hover { text-decoration-thickness: 2px; }
 a:focus-visible { outline: 2px solid var(--ink); outline-offset: 4px; }
 .sticky-header {
   position: sticky; top: 0; z-index: 20;
-  margin: 0 -40px; padding: 18px 40px 0;
+  margin: 0 -40px; padding: 0 40px;
   background: rgba(255,255,255,.97); backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--line);
 }
 .profile {
   display: grid; grid-template-columns: minmax(210px, 280px) minmax(0, 1fr);
   gap: clamp(32px, 6vw, 76px); align-items: center;
-  padding: 0 0 16px; border-bottom: 0;
+  padding: 38px 0 46px; border-bottom: 1px solid var(--ink);
 }
 .photo-placeholder { width: 100%; max-width: 150px; aspect-ratio: 4 / 5; background: var(--soft); border: 1px solid var(--line); }
 .profile-information h1 {
@@ -40,7 +40,7 @@ address a { text-decoration: none; }
 address a:hover { text-decoration: underline; }
 .section-nav {
   display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 32px; padding: 14px 0 15px;
-  border-top: 1px solid var(--line);
+  border-top: 0;
 }
 .section-nav a { color: var(--muted); font-size: 13px; text-decoration: none; }
 .section-nav a:hover { color: var(--ink); text-decoration: underline; }
@@ -79,8 +79,8 @@ footer p { margin: 0; }
 footer a { color: inherit; }
 @media (max-width: 720px) {
   body { padding: 0 22px 24px; }
-  .sticky-header { margin: 0 -22px; padding: 14px 22px 0; }
-  .profile { grid-template-columns: minmax(90px, 120px) minmax(0, 1fr); gap: 18px; padding-bottom: 12px; }
+  .sticky-header { margin: 0 -22px; padding: 0 22px; }
+  .profile { grid-template-columns: minmax(90px, 120px) minmax(0, 1fr); gap: 18px; padding: 28px 0 34px; }
   .photo-placeholder { max-width: 120px; }
   .profile-information h1 { font-size: clamp(21px, 4vw, 30px); }
   .profile-information > p { margin-bottom: 8px; }
@@ -89,8 +89,8 @@ footer a { color: inherit; }
 }
 @media (max-width: 480px) {
   body { padding: 0 17px 22px; font-size: 14px; }
-  .sticky-header { margin: 0 -17px; padding: 12px 17px 0; }
-  .profile { grid-template-columns: 76px minmax(0, 1fr); gap: 13px; }
+  .sticky-header { margin: 0 -17px; padding: 0 17px; }
+  .profile { grid-template-columns: 76px minmax(0, 1fr); gap: 13px; padding: 22px 0 28px; }
   .photo-placeholder { width: 76px; max-width: 76px; aspect-ratio: 4 / 5; }
   .profile-information h1 { font-size: 20px; }
   .section-nav { gap: 8px 14px; padding: 10px 0 12px; }
