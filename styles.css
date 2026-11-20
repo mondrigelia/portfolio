@@ -33,7 +33,7 @@ body {
   font-size: 15px; line-height: 1.65; -webkit-font-smoothing: antialiased;
 }
 a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; }
-a:hover { text-decoration-thickness: 2px; }
+a:hover { color: var(--accent); text-decoration-thickness: 2px; }
 a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 .sticky-header {
   position: sticky; top: 0; z-index: 20;
